@@ -1,9 +1,13 @@
 #include "lib/engine.hh"
 #include <SDL2/SDL.h>
 
+#include "lib/Objects/playfield.hh"
+
 SDL_Event Engine::event;
 SDL_Renderer* Engine::renderer = nullptr;
 bool Engine::running = true;
+
+Playfield playfield;
 
 void Engine::init(const char* title, int x, int y, int w, int h, bool fullscreen)
 {
@@ -29,7 +33,7 @@ void Engine::render()
   SDL_SetRenderDrawColor(renderer, 0x3E, 0x3E, 0x3E, 0xFF);
   SDL_RenderClear(renderer);
 
-
+  playfield.render();
 
   SDL_RenderPresent(renderer);
 }

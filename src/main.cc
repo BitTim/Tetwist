@@ -1,12 +1,13 @@
 #include <iostream>
 #include "lib/engine.hh"
+#include "lib/globals.hh"
 
 Engine* engine = nullptr;
 
 int main()
 {
   engine = new Engine;
-  engine->init("Tetwist", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 640, 320, false);
+  engine->init("Tetwist", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, Global::SCREENWIDTH, Global::SCREENHEIGHT, false);
 
   while(engine->running)
   {
